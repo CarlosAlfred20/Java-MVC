@@ -16,5 +16,6 @@
             Nombres:<input type="text" name="txtNombres" value="" /><br>
             <input type="submit" value="Registrar Nueva Persona" />
         </form>
+        <a href="Mostrar.do">Verificar registro</a>
     </body>
 </html>
