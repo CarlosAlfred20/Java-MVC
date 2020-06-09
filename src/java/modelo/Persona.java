@@ -57,7 +57,7 @@ public class Persona {
        result = state.executeQuery(miQuery);// Ejecutar la consulta
        while(result.next()){//Recorre todo el resultset y almacena en cada fila los registros encontrados
                                                      //El nombre de ser asi como esta en la tabla de la base de datos
-           person.add(new Persona(result.getString("dui_persona"),result.getString("apellidos_persona"),result.getString("nombres_Persona")));
+           person.add(new Persona(result.getString("dui_persona"),result.getString("apellido_persona"),result.getString("nombre_persona")));
          }
       }catch(SQLException ex){
         Logger.getLogger(Persona.class.getName()).log(Level.SEVERE, null, ex);
