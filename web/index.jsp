@@ -4,18 +4,31 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Inicio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <h1>Registro de personas</h1>
-        <!--En el action colocar el nombre del controlador,para este caso es 
-        recibir.do(la extension .do no importa solo indica que es sevlet)-->
         <form action="Mostrar.do" method="POST">
-            DUI:<input type="text" name="txtDui" value="" /><br>
-            Apellidos:<input type="text" name="txtApellidos" value="" /><br>
-            Nombres:<input type="text" name="txtNombres" value="" /><br>
-            <input type="submit" value="Registrar Nueva Persona" />
-        </form>
-        <a href="Mostrar.do">Verificar registro</a>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-4">
+                        <label>Dui: </label>
+                        <input type="text" class="form-control" name="txtDui" value="" /><br>
+                        <label>Apellidos:</label>
+                        <input type="text" class="form-control" name="txtApellidos" value="" /><br>
+                        <label>Nombres:</label>
+                        <input type="text" class="form-control" name="txtNombres" value="" /><br>
+                        <input type="submit" class="btn btn-primary" type="button" value="Registrar Nueva Persona" />
+                    </div>
+                </div>
+            </div>
+        </form> 
+        <br>
+       <center>
+           <a href="Mostrar.do">Verificar registro</a>
+       </center>
+         <script src="js/jquery-3.5.1.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
     </body>
 </html>
