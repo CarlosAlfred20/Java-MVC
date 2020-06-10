@@ -9,21 +9,22 @@
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <form action="Mostrar.do" method="POST">
+       
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-4">
+                        <form action="Recibir.do" method="POST">
                         <label>Dui: </label>
                         <input type="text" class="form-control" name="txtDui" value="" /><br>
                         <label>Apellidos:</label>
                         <input type="text" class="form-control" name="txtApellidos" value="" /><br>
                         <label>Nombres:</label>
                         <input type="text" class="form-control" name="txtNombres" value="" /><br>
-                        <input type="submit" class="btn btn-primary" type="button" value="Registrar Nueva Persona" />
+                        <input type="submit" class="btn btn-primary" value="Registrar Nueva Persona" />
+                        </form>
                     </div>
                 </div>
-            </div>
-        </form> 
+            </div> 
         <br>
        <center>
            <a href="Mostrar.do">Verificar registro</a>
