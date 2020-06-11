@@ -64,6 +64,22 @@ public class Persona {
       }
         return person; //Independientemente encuentro o no registro retorna el objeto person
      }
+     
+     public boolean eliminar(){
+         try {
+             String miQuery = "DELETE FROM tb_persona WHERE dui='" + dui +"'";
+             int estado = 0;
+             state = cnn.createStatement();
+             estado = state.executeUpdate(miQuery);
+             if(estado == 1){
+               return true;
+             }
+         } catch (SQLException ex) {
+             Logger.getLogger(Persona.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Error: "+ex.getMessage());
+         }
+         return false;
+     }
     
     public String getDui() {
         return dui;
@@ -88,5 +104,13 @@ public class Persona {
     //Atributos de la clase
     public void setNombres(String nombres) {
         this.nombres = nombres;
+    }
+
+    public boolean eliminar(String dui) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setDui(Integer dui) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
