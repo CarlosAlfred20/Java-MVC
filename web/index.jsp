@@ -9,7 +9,7 @@
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <form action="Mostrar.do" method="POST">
+        <form action="Recibir.do" method="POST">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-4">
