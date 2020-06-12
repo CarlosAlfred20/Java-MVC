@@ -8,5 +8,6 @@
     </head>
     <body>
         <h1>Registro Insertado Correctamente!</h1>
+        <a href="index.jsp">Volver al inicio</a>
     </body>
 </html>

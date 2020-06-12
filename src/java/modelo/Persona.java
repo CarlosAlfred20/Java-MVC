@@ -72,10 +72,10 @@ public class Persona {
              state = cnn.createStatement();
              result = state.executeQuery(sqlQuery);
              result.next();
-             int duiString = result.getInt("dui_persona");
-             persona.setDui(duiString);
-             persona.setNombres(result.getString("nombre_persona"));
-             persona.setApellidos(result.getString("apeliido_persona"));
+             int duiint = result.getInt("dui_persona");
+             System.out.println("El dui de la bd " + duiint);
+             String duiString =  String.valueOf(duiint);
+             persona = new Persona(duiString, result.getString("apellido_persona"), result.getString("nombre_persona"));
          }catch(SQLException ex){
              System.out.print("ALgo anda mal: " + ex);
          }

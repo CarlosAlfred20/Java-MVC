@@ -23,13 +23,14 @@ public class Modificar extends HttpServlet {
         String duimodificar = request.getParameter("dui"); //Dui de URL
         System.out.println("El dui es: "+ duimodificar);
         Persona utilidades = new Persona();
+        Persona persona;
         // BUsca y guarda el registro
-        utilidades = (Persona) utilidades.buscarRegistro(duimodificar);
+        persona = (Persona) utilidades.buscarRegistro(duimodificar);
         
         // Creo las variables para la vista
-        request.setAttribute("DUI", utilidades.getDui());
-        request.setAttribute("NOMBRE", utilidades.getNombres());
-        request.setAttribute("APELLIDOS", utilidades.getApellidos());
+        request.setAttribute("DUI", persona.getDui());
+        request.setAttribute("NOMBRE", persona.getNombres());
+        request.setAttribute("APELLIDOS", persona.getApellidos());
         request.setAttribute("DUIMODI", duimodificar);
         request.getRequestDispatcher("Editar.jsp").forward(request, response);
        // processRequest(request, response);
@@ -55,7 +56,7 @@ public class Modificar extends HttpServlet {
             person.setApellidos(apellidos);
 
             if (person.modificarDatos(duimodificar) == true ) {                    
-                    request.getRequestDispatcher("mostrar.do").forward(request, response);
+                    request.getRequestDispatcher("Mostrar.do").forward(request, response);
                 } else {
                     request.getRequestDispatcher("noexito.jsp").forward(request, response);
                 }

@@ -18,9 +18,10 @@
         <form action="modificar.do" method="POST">
             <input type="hidden" name="duimodi" value="<%= duimodi%>">
             Dui <input type="text" name="txtDui" value="<%=dui%>"><br>
-            Nombre <input type="text" name="txtNombres" value="<%=nombre%>"><br>
-            Apellido <input type="text" name="txtApellidos" value="<%=apellido%>"><br>
+            Apellido <input type="text" name="txtNombres" value="<%=nombre%>"><br>
+            Nombre <input type="text" name="txtApellidos" value="<%=apellido%>"><br>
             <input type="submit" name="accion" value="actualizar">
         </form>
+            <a href="index.jsp">Volver al inicio</a>
     </body>
 </html>

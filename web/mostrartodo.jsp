@@ -28,5 +28,6 @@
             </tr>
       </c:forEach>
       </table>
+        <a href="index.jsp">Volver al inicio</a>
     </body>
 </html>
