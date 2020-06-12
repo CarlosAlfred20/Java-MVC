@@ -24,7 +24,7 @@
                  <td>Apellidos:${listaTotal.apellidos} </td>
                  <td>Nombres:${listaTotal.nombres}</td>
                  <td><a href="eliminar.do?dui=${listaTotal.dui}"><img width="50" src="Imagenes/Eliminar.png"/>Borrar</a></td>
-                 <td><a href=""><img width="50" src="Imagenes/Editar o modificar.png"/>Modificar</a></td>
+                 <td><a href="modificar.do?dui=${listaTotal.dui}"><img width="50" src="Imagenes/Editar o modificar.png"/>Modificar</a></td>
             </tr>
       </c:forEach>
       </table>

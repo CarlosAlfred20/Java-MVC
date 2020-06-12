@@ -65,9 +65,26 @@ public class Persona {
         return person; //Independientemente encuentro o no registro retorna el objeto person
      }
      
+     public Persona buscarRegistro(String dui){
+         Persona persona = null;
+         try{
+             String sqlQuery = "SELECT * FROM tb_persona WHERE dui_persona ='" + dui +"' ;";
+             state = cnn.createStatement();
+             result = state.executeQuery(sqlQuery);
+             result.next();
+             int duiString = result.getInt("dui_persona");
+             persona.setDui(duiString);
+             persona.setNombres(result.getString("nombre_persona"));
+             persona.setApellidos(result.getString("apeliido_persona"));
+         }catch(SQLException ex){
+             System.out.print("ALgo anda mal: " + ex);
+         }
+         return persona;
+     }
+     
      public boolean eliminar(){
          try {
-             String miQuery = "DELETE FROM tb_persona WHERE dui='" + dui +"'";
+             String miQuery = "DELETE FROM tb_persona WHERE dui_persona='" + dui +"';";
              int estado = 0;
              state = cnn.createStatement();
              estado = state.executeUpdate(miQuery);
@@ -80,6 +97,21 @@ public class Persona {
          }
          return false;
      }
+      public boolean modificarDatos(String duimodificar){       
+        try{
+            String miQuery = "UPDATE tb_persona SET dui_persona = '"+ dui + "', apellido_persona = '" + apellidos + "', nombre_persona = '" + nombres +"' WHERE dui_persona = '" + duimodificar +"';";
+            int estado; //Estado de la inserccion
+            state = cnn.createStatement();
+            estado = state.executeUpdate(miQuery);
+            if(estado == 1){
+                return true;
+                 }
+            }catch (SQLException ex){
+                    Logger.getLogger(Persona.class.getName()).log(Level.SEVERE, null, ex);
+                    System.out.println(ex.getMessage());
+                    }
+            return false;
+        }
     
     public String getDui() {
         return dui;

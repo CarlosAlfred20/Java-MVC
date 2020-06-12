@@ -12,6 +12,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-4">
+                        <h1>Registros de personas:</h1>
                         <form action="Recibir.do" method="POST">
                         <label>Dui: </label>
                         <input type="text" class="form-control" name="txtDui" value="" /><br>

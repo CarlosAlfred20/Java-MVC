@@ -34,15 +34,16 @@ public class Eliminar extends HttpServlet {
          // processRequest(request, response);
         
         //Metodo para la Eliminacion de datos
-        String dui = request.getParameter("dui");
+        String dui_persona = request.getParameter("dui");
         Persona person = new Persona();
-        person.setDui(dui);
+        person.setDui(dui_persona);
         
         if (person.eliminar()){
             request.getRequestDispatcher("Delete.jsp").forward(request, response);
         }else{
             request.getRequestDispatcher("noexito.jsp").forward(request, response);
         }
+        processRequest(request, response);
     }
 
     @Override
